@@ -1,11 +1,15 @@
 
 def add_cont():
+
+    file = open('file.txt', 'r', encoding ='UTF-8')
+    id = len(file.readlines())
+    file.close()
+
     file = open('file.txt', 'a', encoding ='UTF-8')
     data1 = input ('введите ФИО: ')
     data2 = input ('номер телефона: ')
     data3 = input ('место работы: ')
-
-    data = '\n'+data1 + ';'+ data2 + ';' + data3 + ';'
+    data = '\n' + str(id) + ';' + data1 + ';' + data2 + ';' + data3 + ';'
     file.write(data)
     file.close()
 
@@ -88,4 +92,4 @@ def del_cont():
 
     save_phone_book(phone_book)
 
-change_cont()
+add_cont()
